@@ -1,0 +1,127 @@
+def calculate_bmi(weight_kg,height):
+    bmi=weight_kg/(height*height)
+    return round(bmi,2)
+print(calculate_bmi(70,1.72))
+print(calculate_bmi(90,1.8))
+
+def filter_even(numbers):
+    result=[]
+    for n in numbers:
+        if  n%2==0:
+            result.append(n)
+    return result
+print(filter_even([1,2,3,4,5,6]))
+print(filter_even([11,15,21]))
+
+def generate_table(n):
+    result=[]
+    for i in range(1,11):
+        result.append(n*i)
+    return result
+print(generate_table(2))
+print(generate_table(5))
+
+def is_anagram(str1,str2):
+    return sorted(str1.lower())==sorted(str2.lower())
+print(is_anagram('listen','silent'))
+print(is_anagram('hello','olelh'))
+print(is_anagram('apple','pale'))
+
+def count_words(text):
+    words=text.split()
+    result={}
+    for w in words:
+        if w in result:
+            result[w]+=1
+        else:
+            result[w]=1
+    return result
+print(count_words('this is a test this is'))
+        
+print(count_words('hello hello world'))
+
+
+def lru_cache(request,size):
+    cache=[]
+    for r in request:
+        if r in cache:
+            cache.remove(r)
+            cache.insert(0,r)
+        else:
+            if len(cache)<size:
+                cache.insert(0,r)
+            else:
+                cache.pop()
+                cache.insert(0,r)
+    return cache
+print(lru_cache([1,2,3,2,4,1],3))
+print(lru_cache([5,6,7,8],2))
+print(lru_cache([1,2,3,1],2))
+
+def flatten_matrix(matrix):
+    res=[]
+    for i in matrix:
+        for j in i:
+            res.append(j)
+    print(res)
+flatten_matrix([[1,2],[3,4]])            
+flatten_matrix([[5],[6,7],[8]])
+
+def create_email(first_name, last_name, domain):
+    print(f'{first_name.lower()}.{last_name.lower()}@{domain.lower()}.com')
+
+create_email("John", "Doe", "gmail")
+create_email("ALICE", "Smith", "yahoo")
+
+
+def get_factors(n) :
+    res=[]
+    for i in range(1,n//2+1):
+        if n%i==0:
+            res.append(i)
+    res.append(n)
+    print(res)
+
+
+get_factors(12)
+get_factors(17)
+get_factors(28)
+
+
+
+def format_invoice(item, quantity, price):
+    total = quantity * price
+    print(f'{item} x{quantity} @ ₹{price} = ₹{total}')
+
+format_invoice("Pen", 3, 10)
+format_invoice("Notebook", 2, 45)
+
+
+def lru_cache(requests, size):
+    cache=[]
+    for i in requests:
+        if i in cache:
+            cache.remove(i)
+            cache.insert(0,i)
+        else:
+            if len(cache)<size:
+                cache.insert(0,i)
+            else:
+                cache.pop()
+                cache.insert(0,i)
+
+    print(cache)
+
+lru_cache([1,2,3,2,4,1], 3)
+lru_cache([5,6,7,8], 2)
+lru_cache([1,2,3,1], 2)
+
+                
+
+    
+
+    
+
+
+
+
