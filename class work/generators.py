@@ -19,13 +19,15 @@ def square(n):
         yield i*i
 for x in square(4):
     print(x)
-
+'''
 #cube:
 def gen_cube(n):
     for i in range(n,n+1):
         yield i**3
 for x in gen_cube(3):
     print(x)
+
+'''
 #genarating characters:
 def gen_ch(s):
     for ch in s:
